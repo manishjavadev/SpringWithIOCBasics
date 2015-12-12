@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- This is FirstClass Bean Class -->
+	<bean id="firstClass" class="com.manish.javadev.spring3.ioc.FirstClass">
+		<property name="number" value="100" />
+		<property name="name" value="Manish" />
+	</bean>
+
+	<!-- This is SecondClass Bean Class -->
+	<bean id="secondClass" class="com.manish.javadev.spring3.ioc.SecondClass">
+		<constructor-arg value="102" />
+		<constructor-arg value="Manish" />
+	</bean>
+
+	<!-- This is FirstSecond Bean Class -->
+	<bean id="firstSecond" class="com.manish.javadev.spring3.ioc.FirstSecond">
+		<property name="firstClass" ref="firstClass" />
+		<constructor-arg ref="secondClass" />
+	</bean>
+
+</beans>
